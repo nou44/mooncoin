@@ -1,1 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@300..700&family=Neucha&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+
+
+/* إعدادات أساسية */
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(0, 0, 0);
+    width: 100vh;
+  }
+  
+  /* خلفية القمر (canvas) */
+  canvas#bg {
+    position: fixed;
+   
+    width: 100vh;
+    height: 100vh;
+    z-index: -1; /* خلف المحتوى */
+  }
+  
+  /* طبقة المحتوى (نصوص، شعارات) */
+  .content {
+    position: absolute; /* سيجعلها في الطبقة العليا */
+    top: 50%; /* وضعها في المنتصف عموديًا */
+    left: 50%; /* وضعها في المنتصف أفقيًا */
+    transform: translate(-50%, -50%); /* تحريكها لضمان المركز التام */
+    text-align: center; /* ضمان أن النصوص في المنتصف */
+    z-index: 1; /* النصوص فوق الـ canvas */
+    color: white;
+  }
+  
+  /* العنوان */
+  .title {
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideDown 1s forwards;
+    animation-delay: 0.5s;
+    font-family:"Titan One", sans-serif;
+   
+  }
+  
+  /* الشعار */
+  .logo {
+    width: 80px;
+    position: relative;
+    top: -150px;
+    height: auto;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideLeft 1s forwards;
+    animation-delay: 0.8s;
+  }
+  
+  /* صندوق النص الكامل */
+  .side-text {
+    position: relative;
+    top: 100%; /* وضع النص تحت العنوان */
+    left: 0; /* وضع النص في المنتصف */
+    transform: translateX(-50%); /* تحريك النص للوسط */
+    max-width: 300px;
+    padding: 20px;
+ 
+    border-radius: 10px;
+    color: white;
+    opacity: 0;
+    transform: translateX(-50px); /* بداية تحريك النص من اليسار */
+    animation: slideInBox 1s forwards;
+    animation-delay: 1s;
+    font-family:"Titan One", sans-serif;
+  
+    z-index: 2; /* النص يظهر فوق الخلفية */
+  }
+  
+  /* الزر تحت الصندوق مباشرة */
+  .buy-btn {
+    margin-top: 15px;
+    padding: 5px 14px 8px 19px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.2s;
+    background-color:transparent;
+    font-family:"Titan One", sans-serif;
+    color: #f9f2f2;
+    border: 1px rgb(245, 242, 242) solid;
+    box-shadow: 0 0 10px #fff;
+  }
+  .buy-btn:hover {
+    transform: translateX(-5%) scale(1.1);
+  }
+  
+  /* Animations */
+  @keyframes slideDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInBox {
+    to {
+      opacity: 1;
+      transform: translateX(0) translateY(0); /* إرجاع النص إلى مكانه الطبيعي */
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  content {
+    position: absolute; /* سيجعلها في الطبقة العليا */
+    top: -10%; /* وضع العداد في الأعلى قليلاً */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10; /* النصوص فوق الـ canvas */
+    color: white;
+    font-size: 1.5rem; /* حجم النص بشكل عام */
+  }
+  
+  /* العداد */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Chewy', sans-serif;
+    z-index: 10; /* تأكد من أن العداد فوق العناصر الأخرى */
+  }
+  
+  /* عداد الأيام */
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .countdown-item span {
+    font-size: 1.5rem;
+  }
+
 
