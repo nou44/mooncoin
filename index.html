@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Scene with Stars and GLB Model</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+
+<body>
+    
+    
+  <canvas id="bg"></canvas>
+  <div class="content">
+    <div class="header">
+      <h1 class="title animate-from-top">Moon Coin</h1>
+      <img src="image/future cirancy.png" alt="Moon Logo" class="logo animate-from-right">
+    </div>
+
+    <div class="side-text">
+        <p>
+          Discover the power of lunar crypto.  
+          Secure, fast, and ready for the future.  
+          Be part of the revolution.
+        </p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="content">
+        <div class="countdown">
+          <div class="countdown-item">
+            <span id="days"></span>
+            <span></span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours"></span>
+            <span></span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes"></span>
+            <span></span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds"></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/TrackballControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+  <!-- Main script -->
+  <script src="app.js"></script>
+</body>
+</html>
