@@ -67,7 +67,7 @@ scene.add(stars);
 const loader = new THREE.GLTFLoader();
 let moonModel;
 
-loader.load('moon/moon.glb', gltf => {
+loader.load('moon/glb/moon.glb', gltf => {
   moonModel = gltf.scene;
   moonModel.scale.set(1, 1, 1);
   moonModel.position.set(0, 0, 0);
